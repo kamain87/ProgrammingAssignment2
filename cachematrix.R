@@ -33,7 +33,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ##compute the inverse, and set it using setinverse() function from above.
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+      
         i <- x$getinverse()
         
         if(!is.null(i)) {
@@ -43,5 +43,6 @@ cacheSolve <- function(x, ...) {
         m <- x$get()
         i <- solve(m, ...)
         x$setinverse(i)
+          ## Return a matrix that is the inverse of 'x'
         i
 }

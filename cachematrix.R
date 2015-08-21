@@ -3,10 +3,18 @@
 
 ## Functions that cache the inverse of a matrix
 
+## Example usage:
+## source('cachematrix.R')
+## m <- makeCacheMatrix(matrix(c(1, 0, 0, 1), c(2, 2)))
+## cacheSolve(m)
+##[,1] [,2]
+##[1,]    1    0
+##[2,]    0    1
+
 ## Create a special "matrix", which is a list containing
 ## a function to
 ##   - set <- set the value of the matrix
-##   - get <- get the value of the matrix
+##   - get <- get the value of the matrixoptions(error = recover)
 ##   - set inverse <- set the value of the inverse matrix
 ##   - getinverse <- get the value of the inverse matrix
 
@@ -30,7 +38,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Take the inverse of the matrix that was created using the above function. If cached result is stored from makeCacheMatrix above, return it.If not,
-##compute the inverse, and set it using setinverse() function from above.
+##compute the inverse, and set it in the cache using setinverse() function from above.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
